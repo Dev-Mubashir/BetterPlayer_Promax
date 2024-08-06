@@ -1,0 +1,196 @@
+{
+  "programs": [
+    {
+      "genreId": 105,
+      "ChannelName": "Live Entertainment",
+      "programData": [
+        {
+          "id": 93,
+          "name": "Hum TV",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/channels/poster/HUM-TV-Poster.webp?id=45",
+          "isLive": true,
+          "videoUrl": "https://cdn23lhr.tamashaweb.com:8087/jazzauth/humTV-abr/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMDoxNiBBTSZoYXNoX3ZhbHVlPUtDeTh4V3B0S29qYUtkNHE5YlJVSVE9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 178,
+          "name": "ARY Zindagi",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/channels/poster/ary-zindagi-live-poster.webp?id=71",
+          "isLive": true,
+          "videoUrl": "https://cdn24lhr.tamashaweb.com:8087/jazzauth/ARYdigital-abr/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOToyNzozMSBBTSZoYXNoX3ZhbHVlPVhaWWpycnlnSnZmSDB1Zy9mTTd2TUE9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 177,
+          "name": "ARY Digital",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/channels/poster/ary-digital-live-poster.webp?id=83",
+          "isLive": true,
+          "videoUrl": "https://cdn24lhr.tamashaweb.com:8087/jazzauth/ARYdigital-abr/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOToyNzozMSBBTSZoYXNoX3ZhbHVlPVhaWWpycnlnSnZmSDB1Zy9mTTd2TUE9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 93,
+          "name": "Hum TV",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/channels/poster/HUM-TV-Poster.webp?id=45",
+          "isLive": true,
+          "videoUrl": "https://cdn23lhr.tamashaweb.com:8087/jazzauth/humTV-abr/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMDoxNiBBTSZoYXNoX3ZhbHVlPUtDeTh4V3B0S29qYUtkNHE5YlJVSVE9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 178,
+          "name": "ARY Zindagi",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/channels/poster/ary-zindagi-live-poster.webp?id=71",
+          "isLive": true,
+          "videoUrl": "https://cdn24lhr.tamashaweb.com:8087/jazzauth/ARYdigital-abr/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOToyNzozMSBBTSZoYXNoX3ZhbHVlPVhaWWpycnlnSnZmSDB1Zy9mTTd2TUE9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 177,
+          "name": "ARY Digital",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/channels/poster/ary-digital-live-poster.webp?id=83",
+          "isLive": true,
+          "videoUrl": "https://cdn24lhr.tamashaweb.com:8087/jazzauth/ARYdigital-abr/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOToyNzozMSBBTSZoYXNoX3ZhbHVlPVhaWWpycnlnSnZmSDB1Zy9mTTd2TUE9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        }
+      ]
+    },
+    {
+      "genreId": 54,
+      "ChannelName": "Trending in Pakistan",
+      "programData": [
+        {
+          "id": 105968,
+          "name": "Kya Kehna",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1716457916.webp?id=69",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 100228,
+          "name": "London Nahi Jaunga",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1665730934.webp?id=38",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105274,
+          "name": "Jaanwar",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1712181480.webp?id=89",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105968,
+          "name": "Kya Kehna",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1716457916.webp?id=69",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 100228,
+          "name": "London Nahi Jaunga",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1665730934.webp?id=38",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105274,
+          "name": "Jaanwar",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1712181480.webp?id=89",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        }
+      ]
+    },
+    {
+      "genreId": 55,
+      "ChannelName": "Must Watch",
+      "programData": [
+        {
+          "id": 105955,
+          "name": "Ahista Ahista",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1716420183.webp?id=96",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105961,
+          "name": "Bheja Fry 2",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1716446219.webp?id=92",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105945,
+          "name": "Aankhen 2002",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1716412829.webp?id=17",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105955,
+          "name": "Ahista Ahista",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1716420183.webp?id=96",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105961,
+          "name": "Bheja Fry 2",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1716446219.webp?id=92",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105945,
+          "name": "Aankhen 2002",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1716412829.webp?id=17",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        }
+      ]
+    },
+    {
+      "genreId": 53,
+      "ChannelName": "Hollywood Movies",
+      "programData": [
+        {
+          "id": 105418,
+          "name": "In the Name of the King A Dungeon Siege Tale (2007)",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1712309457.webp?id=85",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105409,
+          "name": "While Were Young 2014",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1712309282.webp?id=85",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105400,
+          "name": "UglyDolls 2019  ",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1712308797.webp?id=98",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105418,
+          "name": "In the Name of the King A Dungeon Siege Tale (2007)",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1712309457.webp?id=85",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105409,
+          "name": "While Were Young 2014",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1712309282.webp?id=85",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        },
+        {
+          "id": 105400,
+          "name": "UglyDolls 2019  ",
+          "image": "https://canvas.tamashaweb.com/jazzlive/uploads/programs/1712308797.webp?id=98",
+          "isLive": false,
+          "videoUrl": "https://cdn04khi.tamashaweb.com:8087/hls/105968/Y8weWW8l2fF/smil:mpfour.smil/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny81LzIwMjQgOTozMjoxNCBBTSZoYXNoX3ZhbHVlPTluVWR1L1FRREpaUURtd1ArMkd5Mmc9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+        }
+      ]
+    }
+  ]
+}
