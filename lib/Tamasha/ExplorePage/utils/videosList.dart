@@ -1,4 +1,11 @@
 List<String> videos = [
+  'https://vod1cdn.tamashaweb.com:8087/testlinkvod/reels/c4b19b14-6441-4d4b-a4a9-c4b083e67f02/smil:mpfour.smil/playlist.m3u8',
+  'https://vod2cdn.tamashaweb.com:8087/testlinkvod/reels/82b5fc0c-f3cd-4287-91d7-1d3d67fc7f09/smil:mpfour.smil/playlist.m3u8',
+  'https://vod1cdn.tamashaweb.com:8087/testlinkvod/reels/9641862e-2672-4388-904c-54426882e545/smil:mpfour.smil/playlist.m3u8',
+  'https://vod1cdn.tamashaweb.com:8087/testlinkvod/reels/c01bd51d-440e-43fc-a2ea-3e00a007a080/smil:mpfour.smil/playlist.m3u8',
+  'https://vod2cdn.tamashaweb.com:8087/testlinkvod/reels/eb1fb3bb-484e-44f0-ad65-2a17ddb710f3/smil:mpfour.smil/playlist.m3u8',
+  'https://vod2cdn.tamashaweb.com:8087/testlinkvod/reels/595be55e-5ea4-48f1-820b-18a2b133ae06/smil:mpfour.smil/playlist.m3u8',
+  'https://vod2cdn.tamashaweb.com:8087/testlinkvod/reels/c26cf4ee-737d-432b-9bff-d8e2d6b93652/smil:mpfour.smil/playlist.m3u8',
   "https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4",
   "https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_2mb.mp4",
   "https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_5mb.mp4",
