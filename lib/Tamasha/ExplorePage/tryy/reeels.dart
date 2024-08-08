@@ -1,12 +1,8 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/videoStack.dart';
 import 'package:tamasha_bp/Tamasha/ExplorePage/utils/videosList.dart';
 import 'package:whitecodel_reels/whitecodel_reels.dart';
 
-// ignore: must_be_immutable
 class Reeels extends StatelessWidget {
   Reeels({super.key});
 
@@ -29,16 +25,37 @@ class Reeels extends StatelessWidget {
                 loader: const Center(
                   child: CircularProgressIndicator(),
                 ),
-                isCaching: false,
+                isCaching: true,
                 videoList:
-                    List.generate(videos.length, (index) => videos[index]),
+                    videos.take(3).toList(), // Load only 3 videos at a time
                 builder: (context, index, child, videoPlayerController,
                     pageController) {
+                  // Set the video controller to load only the first 3 seconds
+                  if (videoPlayerController.value.duration.inSeconds > 6) {
+                    // videoPlayerController.setLooping(false);
+                    // videoPlayerController.setVolume(0);
+                    videoPlayerController.play();
+                    // videoPlayerController.seekTo(Duration.zero);
+                  }
+
+                  // Listen for when the page is fully visible to start loading the full video
+                  pageController.addListener(() {
+                    if (pageController.page?.round() == index) {
+                      // Load the full video once the user starts watching it
+                      if (!videoPlayerController.value.isInitialized) {
+                        videoPlayerController.initialize().then((_) {
+                          videoPlayerController.setVolume(1);
+                          videoPlayerController.play();
+                        });
+                      }
+                    }
+                  });
+
                   return VideoStack(
                     index: index,
-                    child: child,
                     videoPlayerController: videoPlayerController,
                     isLiked: isLiked,
+                    child: child,
                   );
                 },
               ),
@@ -46,57 +63,6 @@ class Reeels extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class ActionButtons extends StatelessWidget {
-  final bool isLiked;
-
-  const ActionButtons({Key? key, required this.isLiked}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                isLiked ? Icons.favorite : Icons.favorite_border,
-                color: Colors.white,
-              ),
-              color: Colors.white,
-            ),
-            Text(
-              '6.0K',
-              style: GoogleFonts.roboto(
-                color: Colors.white,
-                fontSize: 13,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 10),
-        Column(
-          children: [
-            Transform.rotate(
-              angle: -math.pi / 4,
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.send,
-                  color: Colors.white,
-                ),
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 25),
-      ],
     );
   }
 }

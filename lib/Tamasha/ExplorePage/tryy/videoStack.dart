@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reeels.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/action_buttons.dart';
 import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reelsDescription.dart';
 import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reelsProgressbar.dart';
 import 'package:video_player/video_player.dart';
@@ -31,18 +31,34 @@ class _VideoStackState extends State<VideoStack> {
   void initState() {
     super.initState();
     videoProgressController = StreamController<double>();
-    widget.videoPlayerController.addListener(() {
-      if (!videoProgressController.isClosed) {
-        double videoProgress =
-            widget.videoPlayerController.value.position.inMilliseconds /
-                widget.videoPlayerController.value.duration.inMilliseconds;
-        videoProgressController.add(videoProgress);
+    widget.videoPlayerController.addListener(_onVideoProgress);
+
+    // Start playing the video but only up to 3 seconds
+    if (widget.videoPlayerController.value.duration.inSeconds > 3) {
+      widget.videoPlayerController.setLooping(false);
+      widget.videoPlayerController.setVolume(0);
+      widget.videoPlayerController.play();
+    }
+  }
+
+  void _onVideoProgress() {
+    final position = widget.videoPlayerController.value.position.inMilliseconds;
+    final duration = widget.videoPlayerController.value.duration.inMilliseconds;
+
+    if (duration > 0) {
+      final progress = position / duration;
+      videoProgressController.add(progress);
+
+      // Pause the video after 3 seconds
+      if (widget.videoPlayerController.value.position.inSeconds >= 3) {
+        widget.videoPlayerController.pause();
       }
-    });
+    }
   }
 
   @override
   void dispose() {
+    widget.videoPlayerController.removeListener(_onVideoProgress);
     videoProgressController.close();
     super.dispose();
   }

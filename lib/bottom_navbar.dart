@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:tamasha_bp/Tamasha/ExplorePage/try/reels.dart';
 import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reeels.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/reeeels.dart';
 import 'package:tamasha_bp/Tamasha/Homepage/Movies_data/home.dart';
 import 'package:tamasha_bp/Tamasha/LiveTvPage/tamasha_livetvplayer.dart';
 
@@ -25,7 +26,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     // ),
     // const ReelsPage(),
     // ReelsPage(),
-    Reeels(),
+    const Reeeels(),
     // const MyHomePage(title: 'Custom Video Player'),
     // const TamashaVideoPlayer(title: "Tamasha Video Player"),
   ];
