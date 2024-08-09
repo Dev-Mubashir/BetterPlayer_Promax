@@ -5,7 +5,9 @@ import 'package:video_player/video_player.dart';
 
 class VideoProvider extends ChangeNotifier {
   List<String> _videoUrls = [];
+  Map<int, VideoPlayerController> _controllers = {};
   int _currentMax = 10;
+  int _currentIndex = 0;
 
   List<String> get videoUrls => _videoUrls;
 
@@ -13,6 +15,7 @@ class VideoProvider extends ChangeNotifier {
     final initialData = await fetchDataAndDecrypt();
     _videoUrls =
         initialData.map((video) => video['url'] as String).take(10).toList();
+    _preloadControllers();
     notifyListeners();
   }
 
@@ -20,13 +23,53 @@ class VideoProvider extends ChangeNotifier {
     final newData = await fetchDataAndDecrypt();
     _videoUrls.addAll(newData.map((video) => video['url'] as String).take(10));
     _currentMax = _videoUrls.length;
+    _preloadControllers();
     notifyListeners();
   }
 
   void checkToLoadMore(int index) {
+    _currentIndex = index;
     if (index == _currentMax - 5) {
       loadMoreVideos();
     }
+    _preloadControllers();
+    _disposeUnusedControllers();
+  }
+
+  void _preloadControllers() {
+    final startIndex = (_currentIndex - 2).clamp(0, _videoUrls.length - 1);
+    final endIndex = (_currentIndex + 3).clamp(0, _videoUrls.length - 1);
+
+    for (int i = startIndex; i <= endIndex; i++) {
+      if (_controllers.containsKey(i)) continue;
+
+      final controller = VideoPlayerController.network(_videoUrls[i])
+        ..initialize().then((_) {
+          notifyListeners();
+        });
+      _controllers[i] = controller;
+    }
+  }
+
+  void _disposeUnusedControllers() {
+    final keysToRemove = _controllers.keys
+        .where((key) => key < _currentIndex - 2 || key > _currentIndex + 3)
+        .toList();
+
+    for (final key in keysToRemove) {
+      _controllers[key]?.dispose();
+      _controllers.remove(key);
+    }
+  }
+
+  VideoPlayerController? getController(int index) {
+    return _controllers[index];
+  }
+
+  @override
+  void dispose() {
+    _controllers.values.forEach((controller) => controller.dispose());
+    super.dispose();
   }
 }
 
@@ -45,7 +88,10 @@ class Reeeels extends StatelessWidget {
               itemCount: videoUrls.length,
               onPageChanged: videoProvider.checkToLoadMore,
               itemBuilder: (context, index) {
-                return VideoPlayerWidget(url: videoUrls[index]);
+                final controller = videoProvider.getController(index);
+                return controller != null
+                    ? VideoPlayerWidget(controller: controller)
+                    : Center(child: CircularProgressIndicator());
               },
             );
           }
@@ -56,30 +102,24 @@ class Reeeels extends StatelessWidget {
 }
 
 class VideoPlayerWidget extends StatefulWidget {
-  final String url;
+  final VideoPlayerController controller;
 
-  VideoPlayerWidget({required this.url});
+  VideoPlayerWidget({required this.controller});
 
   @override
   _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();
 }
 
 class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
-  late VideoPlayerController _controller;
-
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(widget.url)
-      ..initialize().then((_) {
-        setState(() {});
-        _controller.play();
-      });
+    widget.controller.play();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    widget.controller.pause();
     super.dispose();
   }
 
@@ -87,10 +127,10 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 300,
-      child: _controller.value.isInitialized
+      child: widget.controller.value.isInitialized
           ? AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              child: VideoPlayer(_controller),
+              aspectRatio: widget.controller.value.aspectRatio,
+              child: VideoPlayer(widget.controller),
             )
           : const Center(child: CircularProgressIndicator()),
     );
