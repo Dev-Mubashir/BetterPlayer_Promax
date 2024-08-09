@@ -6,10 +6,10 @@ class VideoDescription extends StatelessWidget {
   final VoidCallback onReadMore;
 
   const VideoDescription({
-    Key? key,
+    super.key,
     required this.isReadMore,
     required this.onReadMore,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

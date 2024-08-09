@@ -12,12 +12,12 @@ class VideoStack extends StatefulWidget {
   final bool isLiked;
 
   const VideoStack({
-    Key? key,
+    super.key,
     required this.index,
     required this.child,
     required this.videoPlayerController,
     required this.isLiked,
-  }) : super(key: key);
+  });
 
   @override
   _VideoStackState createState() => _VideoStackState();

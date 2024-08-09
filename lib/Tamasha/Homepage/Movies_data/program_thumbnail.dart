@@ -6,8 +6,7 @@ import 'package:tamasha_bp/Tamasha/Homepage/tamasha_videoplayer.dart';
 class ProgramThumbnail extends StatelessWidget {
   final ProgramDatum programDatum;
 
-  const ProgramThumbnail({Key? key, required this.programDatum})
-      : super(key: key);
+  const ProgramThumbnail({super.key, required this.programDatum});
 
   @override
   Widget build(BuildContext context) {

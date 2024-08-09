@@ -8,10 +8,10 @@ class VideoProgressBar extends StatelessWidget {
   final VideoPlayerController videoPlayerController;
 
   const VideoProgressBar({
-    Key? key,
+    super.key,
     required this.videoProgressController,
     required this.videoPlayerController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -13,35 +13,14 @@ class VideoProvider extends ChangeNotifier {
     final initialData = await fetchDataAndDecrypt();
     _videoUrls =
         initialData.map((video) => video['url'] as String).take(10).toList();
-    await _preloadVideos(_videoUrls);
     notifyListeners();
   }
 
   Future<void> loadMoreVideos() async {
     final newData = await fetchDataAndDecrypt();
-    final newVideoUrls =
-        newData.map((video) => video['url'] as String).take(10).toList();
-    _videoUrls.addAll(newVideoUrls);
+    _videoUrls.addAll(newData.map((video) => video['url'] as String).take(10));
     _currentMax = _videoUrls.length;
-    await _preloadVideos(newVideoUrls);
     notifyListeners();
-  }
-
-  Future<void> _preloadVideos(List<String> urls) async {
-    for (String url in urls) {
-      final controller = VideoPlayerController.network(url);
-      try {
-        await controller.initialize();
-        controller.setVolume(0.0); // Mute during preloading
-        controller.play();
-        await Future.delayed(Duration(seconds: 5)); // Play for 5 seconds
-      } catch (e) {
-        print('Error preloading video from $url: $e');
-      } finally {
-        controller.pause(); // Pause after preloading
-        controller.dispose(); // Dispose to free resources
-      }
-    }
   }
 
   void checkToLoadMore(int index) {

@@ -8,7 +8,7 @@ void main() {
   runApp(
     ChangeNotifierProvider(
       create: (_) => VideoProvider()..loadInitialVideos(),
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }

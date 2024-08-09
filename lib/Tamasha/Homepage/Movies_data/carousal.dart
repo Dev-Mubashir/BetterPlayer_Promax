@@ -20,7 +20,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicator> {
       children: [
         CarouselSlider(
           items: widget.imgList.map((item) {
-            return Container(
+            return SizedBox(
               width: MediaQuery.of(context).size.width,
               child: CachedNetworkImage(
                 imageUrl: item,
@@ -28,7 +28,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicator> {
                 width: double.infinity,
                 // placeholder: (context, url) =>
                 //     const Center(child: CircularProgressIndicator()),
-                errorWidget: (context, url, error) => Icon(Icons.error),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             );
           }).toList(),
@@ -56,7 +56,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicator> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: _current == index
-                    ? Color.fromARGB(228, 149, 147, 147)
+                    ? const Color.fromARGB(228, 149, 147, 147)
                     : const Color.fromRGBO(0, 0, 0, 0.4),
               ),
             );
@@ -76,6 +76,8 @@ class CarouselExample extends StatelessWidget {
     'https://canvas.tamashaweb.com/jazzlive/uploads/slider/TMSH-1718963507632.webp?id=98',
     'https://canvas.tamashaweb.com/jazzlive/uploads/slider/TMSH-1718961584917.webp?id=99',
   ];
+
+  CarouselExample({super.key});
 
   @override
   Widget build(BuildContext context) {

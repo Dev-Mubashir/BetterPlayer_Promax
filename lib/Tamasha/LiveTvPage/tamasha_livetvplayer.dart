@@ -11,7 +11,7 @@ class Tamasha_liveTvPlayer extends StatefulWidget {
 
 class _MyHomePageState extends State<Tamasha_liveTvPlayer> {
   late BetterPlayerController _betterPlayerController;
-  GlobalKey _betterPlayerKey = GlobalKey();
+  final GlobalKey _betterPlayerKey = GlobalKey();
 
   @override
   void initState() {

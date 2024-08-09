@@ -5,7 +5,7 @@ import 'dart:math' as math;
 class ActionButtons extends StatelessWidget {
   final bool isLiked;
 
-  const ActionButtons({Key? key, required this.isLiked}) : super(key: key);
+  const ActionButtons({super.key, required this.isLiked});
 
   @override
   Widget build(BuildContext context) {
