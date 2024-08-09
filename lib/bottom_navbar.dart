@@ -26,7 +26,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     // ),
     // const ReelsPage(),
     // ReelsPage(),
-    const Reeeels(),
+    Reeeels(),
     // const MyHomePage(title: 'Custom Video Player'),
     // const TamashaVideoPlayer(title: "Tamasha Video Player"),
   ];
