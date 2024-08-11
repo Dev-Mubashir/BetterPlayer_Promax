@@ -17,12 +17,12 @@ class ActionButtons extends StatelessWidget {
               onPressed: () {},
               icon: Icon(
                 isLiked ? Icons.favorite : Icons.favorite_border,
-                color: Colors.black,
+                color: Colors.white,
               ),
               color: Colors.white,
             ),
             Text(
-              '6.0K',
+              '8.0K',
               style: GoogleFonts.roboto(
                 color: Colors.white,
                 fontSize: 13,
