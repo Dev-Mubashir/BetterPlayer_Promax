@@ -17,7 +17,7 @@ class ActionButtons extends StatelessWidget {
               onPressed: () {},
               icon: Icon(
                 isLiked ? Icons.favorite : Icons.favorite_border,
-                color: Colors.white,
+                color: Colors.black,
               ),
               color: Colors.white,
             ),
