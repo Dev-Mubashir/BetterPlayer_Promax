@@ -5,7 +5,7 @@ import 'package:video_player/video_player.dart';
 
 class VideoProvider extends ChangeNotifier {
   List<String> _videoUrls = [];
-  Map<int, VideoPlayerController> _controllers = {};
+  final Map<int, VideoPlayerController> _controllers = {};
   int _currentMax = 10;
   int _currentIndex = 0;
 
@@ -68,12 +68,16 @@ class VideoProvider extends ChangeNotifier {
 
   @override
   void dispose() {
-    _controllers.values.forEach((controller) => controller.dispose());
+    for (var controller in _controllers.values) {
+      controller.dispose();
+    }
     super.dispose();
   }
 }
 
 class Reeeels extends StatelessWidget {
+  const Reeeels({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +85,7 @@ class Reeeels extends StatelessWidget {
         builder: (context, videoProvider, child) {
           final videoUrls = videoProvider.videoUrls;
           if (videoUrls.isEmpty) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else {
             return PageView.builder(
               scrollDirection: Axis.vertical,
@@ -91,7 +95,7 @@ class Reeeels extends StatelessWidget {
                 final controller = videoProvider.getController(index);
                 return controller != null
                     ? VideoPlayerWidget(controller: controller)
-                    : Center(child: CircularProgressIndicator());
+                    : const Center(child: CircularProgressIndicator());
               },
             );
           }
@@ -104,7 +108,7 @@ class Reeeels extends StatelessWidget {
 class VideoPlayerWidget extends StatefulWidget {
   final VideoPlayerController controller;
 
-  VideoPlayerWidget({required this.controller});
+  const VideoPlayerWidget({super.key, required this.controller});
 
   @override
   _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();
