@@ -21,14 +21,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const Tamasha_liveTvPlayer(
       title: 'Tamasha LiveTV Player',
     ),
-    // const Tamasha_liveTvPlayer(
-    //   title: 'Tamasha LiveTV Player',
-    // ),
-    // const ReelsPage(),
-    // ReelsPage(),
     const Reeeels(),
-    // const MyHomePage(title: 'Custom Video Player'),
-    // const TamashaVideoPlayer(title: "Tamasha Video Player"),
   ];
 
   void onTabTapped(int index) {

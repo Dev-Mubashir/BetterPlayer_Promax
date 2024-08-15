@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/action_buttons.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reelsDescription.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/videoPlayerWidget.dart';
 import 'package:tamasha_bp/Tamasha/ExplorePage/utils/getReelsData.dart';
 import 'package:video_player/video_player.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class VideoProvider extends ChangeNotifier {
   List<String> _videoUrls = [];
@@ -66,6 +70,24 @@ class VideoProvider extends ChangeNotifier {
     return _controllers[index];
   }
 
+  void playController(int index) {
+    final controller = _controllers[index];
+    if (controller != null &&
+        controller.value.isInitialized &&
+        !controller.value.isPlaying) {
+      controller.play();
+    }
+  }
+
+  void pauseController(int index) {
+    final controller = _controllers[index];
+    if (controller != null &&
+        controller.value.isInitialized &&
+        controller.value.isPlaying) {
+      controller.pause();
+    }
+  }
+
   @override
   void dispose() {
     for (var controller in _controllers.values) {
@@ -80,63 +102,83 @@ class Reeeels extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pageController = PageController();
+
     return Scaffold(
-      body: Consumer<VideoProvider>(
-        builder: (context, videoProvider, child) {
-          final videoUrls = videoProvider.videoUrls;
-          if (videoUrls.isEmpty) {
-            return const Center(child: CircularProgressIndicator());
-          } else {
-            return PageView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: videoUrls.length,
-              onPageChanged: videoProvider.checkToLoadMore,
-              itemBuilder: (context, index) {
-                final controller = videoProvider.getController(index);
-                return controller != null
-                    ? VideoPlayerWidget(controller: controller)
-                    : const Center(child: CircularProgressIndicator());
-              },
-            );
-          }
-        },
+      body: SafeArea(
+        child: Consumer<VideoProvider>(
+          builder: (context, videoProvider, child) {
+            final videoUrls = videoProvider.videoUrls;
+            if (videoUrls.isEmpty) {
+              return const Center(child: CircularProgressIndicator());
+            } else {
+              return PageView.builder(
+                controller: pageController,
+                scrollDirection: Axis.vertical,
+                itemCount: videoUrls.length,
+                onPageChanged: (index) {
+                  videoProvider.checkToLoadMore(index);
+                  videoProvider.playController(index);
+                  if (index > 0) {
+                    videoProvider
+                        .pauseController(index - 1); // Pause the previous video
+                  }
+                  if (index < videoUrls.length - 1) {
+                    videoProvider.pauseController(
+                        index + 1); // Pause the next video in case it's playing
+                  }
+                },
+                itemBuilder: (context, index) {
+                  final controller = videoProvider.getController(index);
+
+                  if (controller == null) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+
+                  return VisibilityDetector(
+                    key: Key("video-$index"),
+                    onVisibilityChanged: (visibilityInfo) {
+                      if (visibilityInfo.visibleFraction == 1) {
+                        videoProvider.playController(
+                            index); // Play the video when fully visible
+                      } else {
+                        videoProvider.pauseController(
+                            index); // Pause when partially out of view
+                      }
+                    },
+                    child: Stack(
+                      children: [
+                        Positioned(
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            top: 0,
+                            child: VideoPlayerWidget(controller: controller)),
+                        const Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: ActionButtons(isLiked: false),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          child: VideoDescription(
+                            isReadMore: false,
+                            onReadMore: () {
+                              // Logic to handle read more
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
+            }
+          },
+        ),
       ),
-    );
-  }
-}
-
-class VideoPlayerWidget extends StatefulWidget {
-  final VideoPlayerController controller;
-
-  const VideoPlayerWidget({super.key, required this.controller});
-
-  @override
-  _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();
-}
-
-class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
-  @override
-  void initState() {
-    super.initState();
-    widget.controller.play();
-  }
-
-  @override
-  void dispose() {
-    widget.controller.pause();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 300,
-      child: widget.controller.value.isInitialized
-          ? AspectRatio(
-              aspectRatio: widget.controller.value.aspectRatio,
-              child: VideoPlayer(widget.controller),
-            )
-          : const Center(child: CircularProgressIndicator()),
     );
   }
 }
