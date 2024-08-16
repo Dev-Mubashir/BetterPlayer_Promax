@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/action_buttons.dart';
-import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reels_description.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/action_buttons.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/reels_description.dart';
 import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reels_progress_bar.dart';
 import 'package:video_player/video_player.dart';
 
