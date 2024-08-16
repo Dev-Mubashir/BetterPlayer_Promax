@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/action_buttons.dart';
-import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reelsDescription.dart';
-import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/videoPlayerWidget.dart';
-import 'package:tamasha_bp/Tamasha/ExplorePage/utils/getReelsData.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reels_description.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/video_player_widget.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/utils/get_reels_data.dart';
 import 'package:video_player/video_player.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -47,10 +47,11 @@ class VideoProvider extends ChangeNotifier {
     for (int i = startIndex; i <= endIndex; i++) {
       if (_controllers.containsKey(i)) continue;
 
-      final controller = VideoPlayerController.network(_videoUrls[i])
-        ..initialize().then((_) {
-          notifyListeners();
-        });
+      final controller =
+          VideoPlayerController.networkUrl(Uri.parse(_videoUrls[i]))
+            ..initialize().then((_) {
+              notifyListeners();
+            });
       _controllers[i] = controller;
     }
   }

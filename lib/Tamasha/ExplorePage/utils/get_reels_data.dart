@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:typed_data';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:tamasha_bp/Tamasha/ExplorePage/utils/encryption_data.dart';
@@ -34,12 +35,12 @@ Future<List<Map<String, dynamic>>> fetchDataAndDecrypt() async {
       return jsonData.map((data) => data as Map<String, dynamic>).toList();
     } else {
       // Handle non-200 status codes
-      print('Failed to fetch data. Status code: ${response.statusCode}');
+      debugPrint('Failed to fetch data. Status code: ${response.statusCode}');
       return [];
     }
   } catch (e) {
     // Handle any errors that occur during the request or decryption
-    print('Error fetching data: $e');
+    debugPrint('Error fetching data: $e');
     return [];
   }
 }
@@ -57,7 +58,7 @@ String decryptAES(String encryptedData, String key, String iv) {
         encrypter.decrypt(encrypt.Encrypted(dataToDecrypt), iv: ivBytes);
     return decrypted;
   } catch (e) {
-    print("Decryption failed: $e");
+    // print("Decryption failed: $e");
     return '';
   }
 }

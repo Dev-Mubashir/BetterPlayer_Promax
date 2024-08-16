@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/videoStack.dart';
-import 'package:tamasha_bp/Tamasha/ExplorePage/utils/videosList.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/video_stack.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/utils/videos_list.dart';
 import 'package:whitecodel_reels/whitecodel_reels.dart';
 
 // ignore: must_be_immutable

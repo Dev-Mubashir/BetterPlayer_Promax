@@ -46,6 +46,7 @@ dependencies:
   provider: ^6.1.2
   whitecodel_reels: ^0.0.6
 
+  visibility_detector: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

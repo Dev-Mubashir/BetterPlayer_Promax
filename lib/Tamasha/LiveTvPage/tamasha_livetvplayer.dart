@@ -1,15 +1,15 @@
 import 'package:better_player/better_player.dart';
 import 'package:flutter/material.dart';
 
-class Tamasha_liveTvPlayer extends StatefulWidget {
-  const Tamasha_liveTvPlayer({super.key, required this.title});
+class TamashaLivetvplayer extends StatefulWidget {
+  const TamashaLivetvplayer({super.key, required this.title});
   final String title;
 
   @override
-  State<Tamasha_liveTvPlayer> createState() => _MyHomePageState();
+  State<TamashaLivetvplayer> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<Tamasha_liveTvPlayer> {
+class _MyHomePageState extends State<TamashaLivetvplayer> {
   late BetterPlayerController _betterPlayerController;
   final GlobalKey _betterPlayerKey = GlobalKey();
 
@@ -49,6 +49,7 @@ class _MyHomePageState extends State<Tamasha_liveTvPlayer> {
     if (isSupported) {
       _betterPlayerController.enablePictureInPicture(_betterPlayerKey);
     } else {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content:

@@ -65,6 +65,7 @@ class _TamashaVideoPlayerState extends State<TamashaVideoPlayer> {
     if (isSupported) {
       _betterPlayerController.enablePictureInPicture(_betterPlayerKey);
     } else {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content:

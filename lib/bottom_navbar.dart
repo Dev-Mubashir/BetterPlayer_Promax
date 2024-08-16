@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/reeeels.dart';
 // import 'package:tamasha_bp/Tamasha/ExplorePage/try/reels.dart';
 // import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reeels.dart';
-import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/reeeels.dart';
+// import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/reeeels.dart';
+// import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/reels_backup.dart';
 import 'package:tamasha_bp/Tamasha/Homepage/Movies_data/home.dart';
 import 'package:tamasha_bp/Tamasha/LiveTvPage/tamasha_livetvplayer.dart';
 
@@ -9,6 +11,7 @@ class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
@@ -18,7 +21,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> _children = [
     // const Home(),
     const Home(),
-    const Tamasha_liveTvPlayer(
+    const TamashaLivetvplayer(
       title: 'Tamasha LiveTV Player',
     ),
     const Reeeels(),

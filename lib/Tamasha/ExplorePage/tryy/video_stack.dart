@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/action_buttons.dart';
-import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reelsDescription.dart';
-import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reelsProgressbar.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reels_description.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryy/reels_progress_bar.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoStack extends StatefulWidget {
@@ -20,10 +20,10 @@ class VideoStack extends StatefulWidget {
   });
 
   @override
-  _VideoStackState createState() => _VideoStackState();
+  VideoStackState createState() => VideoStackState();
 }
 
-class _VideoStackState extends State<VideoStack> {
+class VideoStackState extends State<VideoStack> {
   bool isReadMore = false;
   late StreamController<double> videoProgressController;
 
