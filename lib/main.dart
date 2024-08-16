@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/reeeels.dart';
+// import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/reeeels.dart';
+import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/video_provider.dart';
 import 'package:tamasha_bp/bottom_navbar.dart';
 // import 'package:tamasha_bp/splash_screen.dart';
 import 'package:tamasha_bp/utils/colors.dart';
