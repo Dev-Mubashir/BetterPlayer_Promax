@@ -1,12 +1,18 @@
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class VideoDescription extends StatelessWidget {
+  final String title; // Add title field
+  final String description;
   final bool isReadMore;
   final VoidCallback onReadMore;
 
   const VideoDescription({
     super.key,
+    required this.title,
+    required this.description,
     required this.isReadMore,
     required this.onReadMore,
   });
@@ -32,11 +38,11 @@ class VideoDescription extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(right: 70, left: 18),
+                Padding(
+                  padding: const EdgeInsets.only(right: 70, left: 18),
                   child: Text(
-                    "Title Here",
-                    style: TextStyle(
+                    title,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -44,16 +50,23 @@ class VideoDescription extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  constraints: const BoxConstraints(maxHeight: 300),
+                  constraints: isReadMore
+                      ? null // No constraints if expanded
+                      : const BoxConstraints(
+                          maxHeight: 50), // Show limited lines when collapsed
                   child: SingleChildScrollView(
                     child: Padding(
                       padding: const EdgeInsets.only(right: 70, left: 10),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                          maxLines: isReadMore ? 100 : 2,
-                          overflow: TextOverflow.ellipsis,
+                          description,
+                          maxLines: isReadMore
+                              ? null
+                              : 2, // Set max lines based on isReadMore
+                          overflow: isReadMore
+                              ? TextOverflow.visible
+                              : TextOverflow.ellipsis,
                           style: GoogleFonts.roboto(
                             color: Colors.white,
                             fontSize: 13,
@@ -63,7 +76,7 @@ class VideoDescription extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20)
+                const SizedBox(height: 30)
               ],
             ),
           ),

@@ -4,8 +4,12 @@ import 'dart:math' as math;
 
 class ActionButtons extends StatelessWidget {
   final bool isLiked;
-
-  const ActionButtons({super.key, required this.isLiked});
+  final String likes;
+  const ActionButtons({
+    super.key,
+    required this.isLiked,
+    required this.likes,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,7 @@ class ActionButtons extends StatelessWidget {
               color: Colors.white,
             ),
             Text(
-              '8.0K',
+              likes,
               style: GoogleFonts.roboto(
                 color: Colors.white,
                 fontSize: 13,
