@@ -13,6 +13,7 @@ class VideoProvider extends ChangeNotifier {
 
   // List<String> get videoUrls => _videoUrls;
   List<Map<String, String>> get videos => _videos;
+  final Map<int, double> _visibilityMap = {};
 
   // Future<void> loadInitialVideos() async {
   //   final initialData = await fetchDataAndDecrypt();
@@ -37,6 +38,15 @@ class VideoProvider extends ChangeNotifier {
         .toList();
     _preloadControllers();
     notifyListeners();
+  }
+
+  void updateVisibility(int index, double visibleFraction) {
+    _visibilityMap[index] = visibleFraction;
+    notifyListeners();
+  }
+
+  double getVisibility(int index) {
+    return _visibilityMap[index] ?? 0.0;
   }
 
   // Future<void> loadMoreVideos() async {

@@ -74,13 +74,36 @@ class Reeeels extends StatelessWidget {
                   return VisibilityDetector(
                     key: Key("video-$index"),
                     onVisibilityChanged: (visibilityInfo) {
-                      if (visibilityInfo.visibleFraction == 1) {
+                      final visibleFraction = visibilityInfo.visibleFraction;
+
+                      if (visibleFraction > 0.5) {
                         videoProvider.playController(
-                            index); // Play the video when fully visible
+                            index); // Play the video if it's more than 50% visible
+
+                        if (index > 0) {
+                          // Pause the previous video if it's not more than 50% visible
+                          final previousVisibility =
+                              videoProvider.getVisibility(index - 1);
+                          if (previousVisibility <= 0.5) {
+                            videoProvider.pauseController(index - 1);
+                          }
+                        }
+
+                        if (index < videos.length - 1) {
+                          // Pause the next video if it's not more than 50% visible
+                          final nextVisibility =
+                              videoProvider.getVisibility(index + 1);
+                          if (nextVisibility <= 0.5) {
+                            videoProvider.pauseController(index + 1);
+                          }
+                        }
                       } else {
                         videoProvider.pauseController(
-                            index); // Pause when partially out of view
+                            index); // Pause the video if it's less than or equal to 50% visible
                       }
+
+                      // Update visibility in the provider
+                      videoProvider.updateVisibility(index, visibleFraction);
                     },
                     child: Stack(
                       children: [
@@ -96,18 +119,10 @@ class Reeeels extends StatelessWidget {
                           child: ActionButtons(
                             isLiked: false,
                             likes: likes,
-                            // isPlaying: controller.value.isPlaying,
-                            // onPlayPausePressed: () {
-                            //   if (controller.value.isPlaying) {
-                            //     controller.pause();
-                            //   } else {
-                            //     controller.play();
-                            //   }
-                            // },
                           ),
                         ),
                         Positioned(
-                          bottom: 10, // Adjust as needed for spacing
+                          bottom: 10,
                           left: 10,
                           right: 10,
                           child: VideoProgressBar(
