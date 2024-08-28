@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 class InviteFriends extends StatelessWidget {
   const InviteFriends({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const imageUrl =
+        "https://images.unsplash.com/photo-1495837174058-628aafc7d610?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(
@@ -14,9 +18,22 @@ class InviteFriends extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const Image(
-            image: NetworkImage(
-                "https://images.unsplash.com/photo-1495837174058-628aafc7d610?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+          FutureBuilder<void>(
+            future: precacheImage(NetworkImage(imageUrl), context),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Shimmer.fromColors(
+                  baseColor: Color.fromARGB(57, 32, 32, 32),
+                  highlightColor: Color.fromARGB(82, 63, 63, 63),
+                  child: Container(
+                    height: 250,
+                    color: Colors.black,
+                  ),
+                );
+              } else {
+                return Image.network(imageUrl);
+              }
+            },
           ),
           const SizedBox(height: 40),
           const Text(
@@ -24,10 +41,10 @@ class InviteFriends extends StatelessWidget {
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 20),
-          Text(
-            " Apny Dost ko Tamasha pr invite karen or dost k\nSign up krtu hi 5 coins ap ky. Ek din men ziada sy\n ziada 5 dosto ko invite kr skty hen.",
+          const Text(
+            "Apny Dost ko Tamasha pr invite karen or dost k\nSign up krtu hi 5 coins ap ky. Ek din men ziada sy\nziada 5 dosto ko invite kr skty hen.",
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
           ),
           const SizedBox(height: 20),
           Container(
@@ -35,35 +52,33 @@ class InviteFriends extends StatelessWidget {
               border: Border.all(color: Colors.white),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 12),
-              child: Text(
-                "XYZCODE",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-              ),
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
+            child: const Text(
+              "XYZCODE",
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
           ),
-          Expanded(child: Container()),
+          const Spacer(),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.symmetric(vertical: 8),
             child: ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.all(Colors.blue[700]),
-                shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                  const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                  ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue[700],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
                 ),
-                padding: WidgetStateProperty.all(
-                  const EdgeInsets.symmetric(horizontal: 150),
-                ),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 150, vertical: 10),
               ),
               onPressed: () {},
-              child: const Text("Invite",
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold)),
+              child: const Text(
+                "Invite",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ),
         ],
