@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tamasha_bp/Tamasha/MorePage/FurtherMore/contact_us.dart';
 import 'package:tamasha_bp/Tamasha/MorePage/FurtherMore/invite_friends.dart';
+import 'package:tamasha_bp/Tamasha/MorePage/FurtherMore/promo.dart';
+import 'package:tamasha_bp/Tamasha/MorePage/FurtherMore/watch_history.dart';
 import 'package:tamasha_bp/Tamasha/MorePage/model/more_widget.dart';
 // import 'package:tamasha_bp/Tamasha/MorePage/more_helper.dart';
 import 'package:tamasha_bp/Tamasha/MorePage/widgets/web_view.dart';
@@ -15,7 +17,12 @@ List<MoreOption> getOptions(BuildContext context) {
     MoreOption(
         icon: Icons.history,
         text: 'Watch History',
-        onTap: () => debugPrint('Watch History tapped'),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const WatchHistory()),
+          );
+        },
         routeName: ''),
     MoreOption(
         icon: Icons.card_giftcard,
@@ -25,7 +32,12 @@ List<MoreOption> getOptions(BuildContext context) {
     MoreOption(
         icon: Icons.local_offer,
         text: 'Promo',
-        onTap: () => debugPrint('Promo tapped'),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Promo()),
+          );
+        },
         routeName: ''),
     MoreOption(
         icon: Icons.person_add,
