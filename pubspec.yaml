@@ -47,6 +47,8 @@ dependencies:
   whitecodel_reels: ^0.0.6
 
   visibility_detector: any
+  url_launcher: ^6.3.0
+  webview_flutter: ^4.8.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
