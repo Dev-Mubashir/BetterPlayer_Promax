@@ -56,7 +56,7 @@ List<MoreOption> getOptions(BuildContext context) {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => WebViewPage(
+                builder: (context) => const WebViewPage(
                     url: 'https://jazz.com.pk/mobile-apps/tamasha')),
           );
         },

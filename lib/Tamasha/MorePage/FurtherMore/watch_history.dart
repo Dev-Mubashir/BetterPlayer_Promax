@@ -10,12 +10,12 @@ class WatchHistory extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Watch History'),
-          bottom: TabBar(
+          bottom: const TabBar(
             indicatorColor: Colors.blue, // Color of the underline
             indicatorWeight: 3.0, // Thickness of the underline
             labelColor: Colors.white, // Active tab text color
             unselectedLabelColor: Colors.grey, // Inactive tab text color
-            tabs: const [
+            tabs: [
               Tab(text: 'Live TV Channels'),
               Tab(text: 'Movies & Dramas'),
             ],

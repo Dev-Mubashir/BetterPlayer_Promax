@@ -19,12 +19,12 @@ class InviteFriends extends StatelessWidget {
       body: Column(
         children: [
           FutureBuilder<void>(
-            future: precacheImage(NetworkImage(imageUrl), context),
+            future: precacheImage(const NetworkImage(imageUrl), context),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Shimmer.fromColors(
-                  baseColor: Color.fromARGB(57, 32, 32, 32),
-                  highlightColor: Color.fromARGB(82, 63, 63, 63),
+                  baseColor: const Color.fromARGB(57, 32, 32, 32),
+                  highlightColor: const Color.fromARGB(82, 63, 63, 63),
                   child: Container(
                     height: 250,
                     color: Colors.black,
