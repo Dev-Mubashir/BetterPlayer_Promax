@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TopContainer extends StatelessWidget {
   const TopContainer({
@@ -26,11 +27,11 @@ class TopContainer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Row(
+            Row(
               children: [
-                Icon(Icons.account_circle,
+                const Icon(Icons.account_circle,
                     color: Color.fromARGB(147, 0, 0, 0), size: 70),
-                SizedBox(width: 8),
+                SizedBox(width: 8.w),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,24 +40,24 @@ class TopContainer extends StatelessWidget {
                         'User Name',
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.bold),
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(height: 4),
+                      SizedBox(height: 4.h),
                       Text(
                         'Member since Mar, 2024',
-                        style: TextStyle(color: Colors.white, fontSize: 10),
+                        style: TextStyle(color: Colors.white, fontSize: 10.sp),
                         overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
                 ),
-                SizedBox(width: 8),
+                SizedBox(width: 8.w),
                 Row(
                   children: [
                     Icon(Icons.circle,
-                        color: Color.fromARGB(146, 255, 183, 0), size: 40),
+                        color: Color.fromARGB(146, 255, 183, 0), size: 40.w),
                     SizedBox(width: 4),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +66,7 @@ class TopContainer extends StatelessWidget {
                           '0 Coins',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 12,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.bold),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -73,7 +74,7 @@ class TopContainer extends StatelessWidget {
                           'PKR 0',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 12,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.bold),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -83,29 +84,30 @@ class TopContainer extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 15),
+            SizedBox(height: 15.h),
             Row(
               children: [
-                const Icon(Icons.star_border_purple500_rounded,
-                    color: Colors.white, size: 40),
-                const SizedBox(width: 8),
+                Icon(Icons.star_border_purple500_rounded,
+                    color: Colors.white, size: 40.w),
+                SizedBox(width: 8.w),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Achieved Level 0',
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.bold),
                         overflow: TextOverflow.ellipsis,
                       ),
                       GestureDetector(
                         onTap: () => debugPrint('Redeem your coins tapped'),
-                        child: const Text(
+                        child: Text(
                           'Redeem your coins',
-                          style: TextStyle(color: Colors.white, fontSize: 12),
+                          style:
+                              TextStyle(color: Colors.white, fontSize: 12.sp),
                         ),
                       ),
                     ],

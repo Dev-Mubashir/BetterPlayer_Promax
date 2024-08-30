@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tamasha_bp/Tamasha/MorePage/widgets/middle_container.dart';
 import 'package:tamasha_bp/Tamasha/MorePage/widgets/more_options.dart';
 import 'package:tamasha_bp/Tamasha/MorePage/widgets/top_container.dart';
@@ -10,11 +11,11 @@ class MorePage extends StatelessWidget {
     final options = getOptions(context);
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 40,
-        leading: const Icon(
+        toolbarHeight: 40.h,
+        leading: Icon(
           Icons.arrow_back,
           color: Colors.white,
-          size: 25,
+          size: 25.w,
         ),
       ),
       body: Column(
@@ -30,13 +31,13 @@ class MorePage extends StatelessWidget {
                   visualDensity: VisualDensity.compact,
                   contentPadding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
-                  leading:
-                      Icon(options[index].icon, color: Colors.white, size: 24),
+                  leading: Icon(options[index].icon,
+                      color: Colors.white, size: 24.w),
                   title: Row(
                     children: [
                       Text(options[index].text,
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 14)),
+                          style:
+                              TextStyle(color: Colors.white, fontSize: 14.sp)),
                       options[index].child ?? const SizedBox(),
                     ],
                   ),

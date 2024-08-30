@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MiddleContainer extends StatelessWidget {
   const MiddleContainer({
@@ -17,13 +18,13 @@ class MiddleContainer extends StatelessWidget {
           color: Colors.blueGrey[900],
         ),
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
-                Icon(Icons.text_fields_sharp, color: Colors.white, size: 40),
-                SizedBox(width: 8),
+                Icon(Icons.text_fields_sharp, color: Colors.white, size: 40.w),
+                SizedBox(width: 8.w),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -31,14 +32,14 @@ class MiddleContainer extends StatelessWidget {
                       'Tamasha',
                       style: TextStyle(
                           color: Color.fromARGB(255, 0, 120, 241),
-                          fontSize: 10,
+                          fontSize: 10.sp,
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
                       'Not Subscribed',
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.bold),
                     ),
                   ],

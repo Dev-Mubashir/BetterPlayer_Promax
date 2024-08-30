@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tamasha_bp/Tamasha/MorePage/FurtherMore/contact_us.dart';
 import 'package:tamasha_bp/Tamasha/MorePage/FurtherMore/invite_friends.dart';
 import 'package:tamasha_bp/Tamasha/MorePage/FurtherMore/promo.dart';
@@ -70,9 +71,9 @@ List<MoreOption> getOptions(BuildContext context) {
         child: Row(
           children: [
             const SizedBox(width: 12),
-            const Icon(
+            Icon(
               Icons.call,
-              size: 24,
+              size: 24.sp,
               color: Colors.green,
             ),
             TextButton(
@@ -80,10 +81,10 @@ List<MoreOption> getOptions(BuildContext context) {
               style: TextButton.styleFrom(
                 padding: const EdgeInsets.all(5),
               ),
-              child: const Text('0300-3111119',
+              child: Text('0300-3111119',
                   style: TextStyle(
-                      color: Color.fromARGB(255, 0, 120, 241),
-                      fontSize: 14,
+                      color: const Color.fromARGB(255, 0, 120, 241),
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.bold)),
             ),
           ],
