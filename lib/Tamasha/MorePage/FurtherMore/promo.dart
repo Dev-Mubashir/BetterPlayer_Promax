@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Promo extends StatelessWidget {
   const Promo({super.key});
@@ -13,20 +14,20 @@ class Promo extends StatelessWidget {
           const Expanded(
             child: Icon(Icons.card_giftcard_outlined, size: 150),
           ),
-          const Center(
+          Center(
             child: Text(
               'Promo Code',
               style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 24.sp,
                   color: Colors.white,
                   fontWeight: FontWeight.bold),
             ),
           ),
-          const SizedBox(height: 20),
-          const Expanded(
+          SizedBox(height: 20.h),
+          Expanded(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: const TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Enter Here',
@@ -48,10 +49,10 @@ class Promo extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 150, vertical: 10),
               ),
               onPressed: () {},
-              child: const Text(
+              child: Text(
                 "Next",
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WatchHistory extends StatelessWidget {
   const WatchHistory({super.key});
@@ -51,10 +52,10 @@ class LiveTVChannelsTab extends StatelessWidget {
 
     return GridView.builder(
       padding: const EdgeInsets.all(16.0),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 4, // 4 avatars per row
-        crossAxisSpacing: 16.0,
-        mainAxisSpacing: 16.0,
+        crossAxisSpacing: 16.0.w,
+        mainAxisSpacing: 16.0.h,
       ),
       itemCount: channels.length,
       itemBuilder: (context, index) {
@@ -64,14 +65,14 @@ class LiveTVChannelsTab extends StatelessWidget {
               radius: 25,
               child: Text(
                 channels[index][0], // Display first letter of channel name
-                style: const TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20.sp),
               ),
             ),
-            const SizedBox(height: 8.0),
+            SizedBox(height: 8.0.h),
             Text(
               channels[index],
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 12),
+              style: TextStyle(fontSize: 12.sp),
             ),
           ],
         );
