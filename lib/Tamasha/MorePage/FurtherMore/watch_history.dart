@@ -97,7 +97,7 @@ class MoviesAndDramasTab extends StatelessWidget {
     ];
 
     return ListView.builder(
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0.w),
       itemCount: items.length,
       itemBuilder: (context, index) {
         return ListTile(
