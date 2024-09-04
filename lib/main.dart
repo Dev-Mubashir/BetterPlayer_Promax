@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 // import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/reeeels.dart';
 import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/video_provider.dart';
+import 'package:tamasha_bp/Tamasha/LoginPage/login.dart';
 import 'package:tamasha_bp/bottom_navbar.dart';
 // import 'package:tamasha_bp/splash_screen.dart';
 import 'package:tamasha_bp/utils/colors.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
                 appBarTheme: AppBarTheme(
                   color: Color(kbgcolor),
                 )),
-            home: const BottomNavBar(),
+            home: Login(),
           );
         });
   }
