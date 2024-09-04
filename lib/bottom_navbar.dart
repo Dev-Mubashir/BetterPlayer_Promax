@@ -6,6 +6,7 @@ import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/reeeels.dart';
 // import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/reels_backup.dart';
 import 'package:tamasha_bp/Tamasha/Homepage/Movies_data/home.dart';
 import 'package:tamasha_bp/Tamasha/LiveTvPage/tamasha_livetvplayer.dart';
+import 'package:tamasha_bp/Tamasha/MorePage/more_page.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -25,6 +26,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       title: 'Tamasha LiveTV Player',
     ),
     const Reeeels(),
+    MorePage(),
   ];
 
   void onTabTapped(int index) {
@@ -59,6 +61,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.explore),
             label: 'Reels',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu_rounded),
+            label: 'More',
           ),
         ],
       ),

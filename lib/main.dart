@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 // import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/reeeels.dart';
 import 'package:tamasha_bp/Tamasha/ExplorePage/tryyy/video_provider.dart';
@@ -20,17 +21,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-          brightness: Brightness.dark,
-          appBarTheme: AppBarTheme(
-            color: Color(kbgcolor),
-          )),
-      home: const BottomNavBar(),
-    );
+    return ScreenUtilInit(
+        designSize: const Size(390, 884),
+        builder: (context, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: ThemeData(
+                // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                useMaterial3: true,
+                brightness: Brightness.dark,
+                appBarTheme: AppBarTheme(
+                  color: Color(kbgcolor),
+                )),
+            home: const BottomNavBar(),
+          );
+        });
   }
 }
