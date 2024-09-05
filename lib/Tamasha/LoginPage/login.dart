@@ -43,7 +43,7 @@ class Login extends StatelessWidget {
               size: 200,
             ),
             const Text('Apna network select karen'),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -103,7 +103,7 @@ class Login extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'Continue',
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
@@ -136,20 +136,9 @@ class Login extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Text(
-                //   "By logging in you agree to our Terms & Conditions and\nPrivacy Policy",
-                //   style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                //   textAlign: TextAlign.center,
-                // ),
-                // TextButton(
-                //   onPressed: () {},
-                //   child: Text("Terms & Conditions"),
-                // ),
-                // Text("and"),
               ],
             ),
             const SizedBox(height: 10),
-            // TextButton(onPressed: () {}, child: Text("Privacy Policy")),
           ],
         ));
   }
@@ -161,7 +150,6 @@ class _FixedLengthInputFormatter extends TextInputFormatter {
     TextEditingValue oldValue,
     TextEditingValue newValue,
   ) {
-    // Ensure the total length with prefix does not exceed 14 (4 for '+92 | ' and 10 for digits)
     if (newValue.text.length > 14) {
       return oldValue;
     }
