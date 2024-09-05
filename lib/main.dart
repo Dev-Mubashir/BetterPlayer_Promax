@@ -35,7 +35,8 @@ class MyApp extends StatelessWidget {
                 appBarTheme: AppBarTheme(
                   color: Color(kbgcolor),
                 )),
-            home: Login(),
+            // home: Login(),
+            home: BottomNavBar(),
           );
         });
   }

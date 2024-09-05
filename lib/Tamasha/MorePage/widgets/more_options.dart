@@ -63,31 +63,32 @@ List<MoreOption> getOptions(BuildContext context) {
         },
         routeName: ''),
     MoreOption(
-        icon: Icons.message_rounded,
-        text: 'Contact Us',
-        // onTap: () {},
-        onTap: () => ExternalAppsHelper.openWhatsapp('+923003111119'),
-        routeName: '',
-        child: Row(
-          children: [
-            const SizedBox(width: 12),
-            Icon(
-              Icons.call,
-              size: 24.sp,
-              color: Colors.green,
+      icon: Icons.message_rounded,
+      text: 'Contact Us',
+      // onTap: () {},
+      onTap: () => ExternalAppsHelper.openWhatsapp('+923003111119'),
+      routeName: '',
+      child: Row(
+        children: [
+          const SizedBox(width: 12),
+          Icon(
+            Icons.call,
+            size: 24.sp,
+            color: Colors.green,
+          ),
+          TextButton(
+            onPressed: () {},
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(5),
             ),
-            TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                padding: const EdgeInsets.all(5),
-              ),
-              child: Text('0300-3111119',
-                  style: TextStyle(
-                      color: const Color.fromARGB(255, 0, 120, 241),
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.bold)),
-            ),
-          ],
-        )),
+            child: Text('0300-3111119',
+                style: TextStyle(
+                    color: const Color.fromARGB(255, 0, 120, 241),
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold)),
+          ),
+        ],
+      ),
+    ),
   ];
 }
