@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:tamasha_bp/Tamasha/Homepage/Movies_data/carousal.dart';
 import 'package:tamasha_bp/Tamasha/Homepage/Movies_data/program_row.dart';
 import 'package:tamasha_bp/Tamasha/Homepage/Movies_data/programs_data_model.dart';
+import 'package:tamasha_bp/Tamasha/Homepage/SearchBarHome/search_bar.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -30,11 +31,23 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text(
-            'Tamasha',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Icon(
+              Icons.text_fields_rounded,
+              size: 30,
+            ),
+            IconButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MovieSearchBar(),
+                ),
+              ),
+              icon: const Icon(Icons.search, size: 30),
+            )
+          ],
         ),
       ),
       body: FutureBuilder<ProgramsDataModel>(

@@ -57,8 +57,9 @@ class TopContainer extends StatelessWidget {
                 Row(
                   children: [
                     Icon(Icons.circle,
-                        color: Color.fromARGB(146, 255, 183, 0), size: 40.w),
-                    SizedBox(width: 4),
+                        color: const Color.fromARGB(146, 255, 183, 0),
+                        size: 40.w),
+                    SizedBox(width: 4.w),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

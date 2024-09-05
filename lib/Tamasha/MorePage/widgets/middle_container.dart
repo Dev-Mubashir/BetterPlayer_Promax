@@ -31,7 +31,7 @@ class MiddleContainer extends StatelessWidget {
                     Text(
                       'Tamasha',
                       style: TextStyle(
-                          color: Color.fromARGB(255, 0, 120, 241),
+                          color: const Color.fromARGB(255, 0, 120, 241),
                           fontSize: 10.sp,
                           fontWeight: FontWeight.bold),
                     ),
@@ -46,7 +46,7 @@ class MiddleContainer extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
+            const Row(
               children: [
                 Icon(
                   Icons.refresh,

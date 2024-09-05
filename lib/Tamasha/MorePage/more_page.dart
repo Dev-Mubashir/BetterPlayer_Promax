@@ -11,6 +11,15 @@ class MorePage extends StatelessWidget {
     final options = getOptions(context);
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          TextButton(
+            onPressed: () {},
+            child: const Text(
+              "Logout",
+              style: TextStyle(fontSize: 16, color: Colors.white),
+            ),
+          )
+        ],
         toolbarHeight: 40.h,
         leading: Icon(
           Icons.arrow_back,
